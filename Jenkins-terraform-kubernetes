@@ -1,0 +1,38 @@
+LinkToWorld is a company that provides online registrations of people all over the world that helps people by tracking location through GPS or manual entry. It links people with emergency and support agencies in the location of the travelers.
+
+LinkToWorld is now looking forward to migrating their legacy and monolithic systems to microservices in the cloud. They have chosen AWS as their cloud service provider. In order to better perform LinkToWorld has decided to create a DevOps Team and follow DevOps practices in order to adapt new technologies and reduce the CAPEX and OPEX and other costs.
+
+As a DevOps Engineer, you have been assigned the tasks as below:
+
+1.	Implement Infrastructure in AWS using Terraform as IaC.
+a.	VPC.
+b.	Subnets.
+c.	Internet Gateway
+d.	Route Tables.
+e.	Security Group.
+f.	EC2 for running Kubernetes. (Minikube).
+
+2.	Jenkins will be used to create CICD pipeline to perform below.
+a.	Create Infrastructure with the terraform file stored in GitHub.
+b.	As soon changes are pushed, Jenkins will run the terraform to create the infrastructure.
+3.	Build and Deploy Docker Images for applications.
+a.	Jenkins will build and push docker images to docker hub.
+b.	Jenkins will create the Kubernetes deployment with 3 replicas with the image from the docker hub.
+c.	Jenkins will create service to expose the deployment.
+
+4.	Use Ansible to add users and RSA keys and perform patching. This should happen as soon as new user creation file is pushed to GitHub.
+5.	They also want to implement Datadog as Kubernetes Pods.
+6.	They also want to explore Puppet and Chef for configuration management. 
+
+
+Steps:
+
+1.	Login to minikube server and start it.
+sudo systemctl status docker
+minikube start
+2.	Create Dockerfile
+Write code in Jenkins pipeline
+1.	Build image
+2.	Push to dockerhub.
+docker image tag httpdimg :v1.0 susigugh/ httpdimg :v1.0
+docker push susigugh/httpdimg:v1.0
